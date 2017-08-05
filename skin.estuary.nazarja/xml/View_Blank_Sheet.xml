@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_5011_Netflix_Episodes">	
+		<control type="group">
+			<visible>Control.IsVisible(5011)</visible>
+			<include>OpenClose_Right</include>
+			<include>Visible_Right</include>
+
+
+			<control type="fixedlist" id="5011">
+				<visible>Container.Content(episodes)</visible>
+				<viewtype label="Netflix (Episodes)">list</viewtype>
+				<orientation>vertical</orientation>
+				<onleft>9000</onleft>
+				<onright>531</onright>
+				<onup>5011</onup>
+				<ondown>5011</ondown>
+				<pagecontrol>531</pagecontrol>
+				<movement>5</movement>
+				<focusposition>6</focusposition>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+
+				<top>0</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>0</bottom>
+				<height></height>
+				<width></width>
+
+				
+				<itemlayout condition="Container.Content(episodes)">
+					
+				</itemlayout>
+
+				<focusedlayout  condition="Container.Content(episodes)">
+					
+				</focusedlayout>
+
+			</control> <!-- End of List-->
+
+		</control><!-- End of Group-->
+
+
+
+		
+	</include>
+</includes>

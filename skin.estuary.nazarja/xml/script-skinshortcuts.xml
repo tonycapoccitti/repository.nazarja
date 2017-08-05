@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol>90001</defaultcontrol>
+    <backgroundcolor>background</backgroundcolor>
+    <controls>
+        <include>DefaultBackground</include>
+        <control type="multiimage">
+            <depth>DepthBackground</depth>
+            <include>FullScreenDimensions</include>
+            <aspectratio>scale</aspectratio>
+            <fadetime>600</fadetime>
+            <animation effect="zoom" center="auto" end="102,102" time="0"
+                       condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional
+            </animation>
+            <animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <imagepath background="true" colordiffuse="bg_overlay">
+                $INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]
+            </imagepath>
+            <visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
+        </control>
+
+        <control type="group">
+            <control type="group">
+                <depth>DepthContentPanel</depth>
+                <left>0</left>
+                <include>OpenClose_Left</include>
+                <include content="ContentPanel">
+                    <param name="width" value="615"/>
+                </include>
+                <control type="list" id="211">
+                    <left>0</left>
+                    <top>160</top>
+                    <width>470</width>
+                    <height>840</height>
+                    <onleft>10000</onleft>
+                    <onright>700</onright>
+                    <onup>211</onup>
+                    <ondown>211</ondown>
+                    <itemlayout height="90" width="460">
+                        <control type="label">
+                            <textoffsetx>40</textoffsetx>
+                            <width>460</width>
+                            <height>90</height>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>font14</font>
+                            <aligny>center</aligny>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="90" width="440">
+                        <control type="image">
+                            <width>440</width>
+                            <height>90</height>
+                            <texture colordiffuse="button_focus">lists/focus.png</texture>
+                            <animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">
+                                Conditional
+                            </animation>
+                        </control>
+                        <control type="label">
+                            <textoffsetx>40</textoffsetx>
+                            <width>460</width>
+                            <height>90</height>
+                            <font>font14</font>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+            <control type="grouplist" id="700">
+				<orientation>vertical</orientation>
+				<itemgap>-16</itemgap>
+				<left>430</left>
+				<top>150</top>
+				<onup>700</onup>
+				<ondown>700</ondown>
+				<onleft>211</onleft>
+				<onright>10000</onright>
+				<include content="IconButton">
+					<param name="control_id" value="301" />
+					<param name="icon" value="icons/add.png" />
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="302" />
+					<param name="icon" value="icons/delete.png" />
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="303" />
+					<param name="icon" value="icons/up.png" />
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="304" />
+					<param name="icon" value="icons/down.png" />
+				</include>
+			</control>
+            <control type="group" id="10000">
+                <left>560</left>
+                <include>OpenClose_Right</include>
+                <control type="grouplist" id="90001">
+                    <top>160</top>
+                    <left>0</left>
+                    <right>0</right>
+                    <bottom>60</bottom>
+                    <onleft>700</onleft>
+                    <onright>60</onright>
+                    <onup>90001</onup>
+                    <ondown>90001</ondown>
+                    <pagecontrol>60</pagecontrol>
+
+                    <!-- ////////////////////////////////////////////////////////////////////////////////////  -->
+
+                    <control type="button" id="401">
+                        <description>Choose shortcut</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32048]</label>
+                        <label2>$INFO[Container(211).ListItem.Label]</label2>
+                    </control>
+                    <control type="button" id="307">
+                        <description>Change action</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32027]</label>
+                        <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+                    </control>
+                    <control type="button" id="305">
+                        <description>Change label</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32025]</label>
+                        <label2>$INFO[Container(211).ListItem.Label]</label2>
+                    </control>
+                    <control type="button" id="405">
+                        <description>Edit submenu</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32072]</label>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+
+                    <!-- ////////////////////////////////////////////////////////////////////////////////////  -->
+
+                    <control type="button" id="312">
+                        <description>Select widget</description>
+                        <width>1256</width>
+                        <include>DefaultSettingButton</include>
+                        <label>$ADDON[script.skinshortcuts 32044]</label>
+                        <label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
+                        <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=[True/False]&amp;grouping=[grouping]&amp;skinWidget=[skinWidget]&amp;skinWidgetType=[skinWidgetType]&amp;skinWidgetName=[skinWidgetName]&amp;skinWidgetTarget=[skinWidgetTarget]&amp;skinWidgetPath=[skinWidgetPath])</onclick>  
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control> 
+ 
+                </control>
+                <control type="image">
+                    <description>Dialog Header image</description>
+                    <left>0</left>
+                    <top>157</top>
+                    <right>0</right>
+                    <height>3</height>
+                    <texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+                </control>
+            </control>
+        </control>
+
+        <include content="TopBar">
+            <param name="breadcrumbs_label" value="$LOCALIZE[20077] / $LOCALIZE[40038]"/>
+            <param name="breadcrumbs_icon" value="icons/settings/skin.png"/>
+        </include>
+        <include>BottomBar</include>
+    </controls>
+</window>

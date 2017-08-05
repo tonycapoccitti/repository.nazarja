@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_509_Netflix_Long">
+	<!-- <visible>!Container.Content(seasons)</visible> -->
+	<control type="group">
+		<visible>Control.IsVisible(509)</visible>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<aligny>top</aligny>
+				<right>0</right>
+				<height>55%</height>
+				<width>55%</width>
+				<depth>DepthBackground</depth>
+				<!-- <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Fanart)]</texture> -->
+				<texture>$INFO[ListItem.Art(fanart)]</texture>
+			</control>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<include>FullScreenDimensions</include>
+				<depth>DepthBackground</depth>
+				<texture>overlays/NetFlixOverlay3.png</texture>
+				<colordiffuse>FF000000</colordiffuse>
+			</control>  
+
+			<control type="image">
+						<depth>DepthContentPopout</depth>
+						<left>42.5%</left>
+						<right>0</right>
+						<top>320</top>
+						<width max="537">auto</width>
+						<height>120</height>
+						<aspectratio align="top" aligny="center">keep</aspectratio>
+						<texture background="true">$VAR[ClearLogoVar]</texture>
+						<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+						<visible>!Skin.HasSetting(ToggleClearArtLogo) + Skin.HasSetting(ClearArtOnViews)</visible>
+				</control>
+				 <control type="image">
+						<depth>DepthContentPopout</depth>
+						<left>42.5%</left>
+						<right>0</right>
+						<top>320</top>
+						<width max="537">auto</width>
+						<height>160</height>
+						<aspectratio align="top" aligny="center">keep</aspectratio>
+						<texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearart)]</texture>
+						<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+						<visible>Skin.HasSetting(ToggleClearArtLogo) + Skin.HasSetting(ClearArtOnViews)</visible>
+				</control>  
+
+			<control type="textbox">
+				<left>50%</left>
+                <right>0</right>
+				<top>500</top>
+				<height>60</height>
+				<font>fontMainMenu</font>
+				<textcolor>button_focus</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>50%</left>
+                <right>0</right>
+				<top>560</top>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>$INFO[ListItem.Genre] | $INFO[ListItem.Year] </label>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>50%</left>
+				<top>615</top>
+                <right>0</right>
+				<height>300</height>
+				<font>smallInfoFont</font>
+				<label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label> 
+				<autoscroll delay="6000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>50%</left>
+				<top>975</top>
+				<right>0</right>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>IMDB: $INFO[ListItem.RatingandVotes]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>68%</left>
+				<top>975</top>
+				<height>60</height>
+                <right>0</right>
+				<font>fontSubMenu</font>
+				<label>Studio: $INFO[ListItem.Studio]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<visible>!String.IsEmpty(ListItem.Studio)</visible>
+			</control>
+			<control type="textbox">
+				<left>68%</left>
+				<top>975</top>
+                <right>0</right>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>DVD Release: $INFO[Window(Home).Property(SkinHelper.ListItem.DVDRelease)] </label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease)</visible> 
+			</control>
+			 <control type="textbox">
+				<left>68%</left>
+				<top>975</top>
+                <right>0</right>
+				<width>300</width>
+				<height>30</height>
+				<font>fontSubMenu</font>
+				<label>Director: $INFO[ListItem.Director]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease) + Container.Content(movies)</visible> 
+			</control> 
+			<control type="textbox">
+				<left>85%</left>
+				<top>975</top>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>Status: $INFO[Window(Home).Property(SkinHelper.ListItem.Status)] </label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status) + Container.Content(tvshows)</visible> 
+			</control>
+			<control type="textbox">
+				<left>85%</left>
+				<top>975</top>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>Budget: $INFO[Window(Home).Property(SkinHelper.ListItem.Budget.formatted)] </label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Budget.formatted) + Container.Content(movies)</visible> 
+			</control>
+
+			<control type="textbox">
+				<right>20</right>
+				<top>420</top>
+				<width>350</width>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>Ends at: $INFO[ListItem.EndTime] ($INFO[Window(Home).Property(SkinHelper.ListItem.Duration)] mins)</label> 
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+		</control>
+
+		<control type="group">
+			<include>OpenClose_Right</include>
+			<visible>Control.IsVisible(509)</visible>
+			<include>Visible_Right</include>
+			<left>0</left>
+			<right>0</right>
+			<top>-10</top>
+			<animation effect="slide" end="5,0" time="0" condition="String.IsEqual(Skin.AspectRatio,21:9) + [Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)]">Conditional</animation>
+			<animation effect="slide" end="-17.5,0" time="0" condition="String.IsEqual(Skin.AspectRatio,21:9) + [Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)]">Conditional</animation>
+			<animation effect="slide" end="132,0" time="0" condition="String.IsEqual(Skin.AspectRatio,21:9) + Container.Content(images)">Conditional</animation>
+			<control type="panel" id="509">
+				<top>20</top>
+				<width>50%</width>
+				<height>100%</height>
+				<oninfo condition="String.IsEqual(ListItem.DBType,set)">ActivateWindow(1132)</oninfo>
+				<onleft condition="!Skin.HasSetting(KioskMode)">9000</onleft>
+				<onright>60</onright>
+				<onup>509</onup>
+				<ondown>509</ondown>
+				<viewtype label="Netflix Style Long">icon</viewtype>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<visible>Container.Content(images) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
+				<itemlayout height="225" width="376" condition="Container.Content(images)">
+					<control type="group">
+						<top>85</top>
+						<left>5</left>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>406</width>
+							<height>255</height>
+							<texture fallback="DefaultPicture.png" background="true">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="225" width="376" condition="Container.Content(images)">
+					<control type="group">
+						<top>85</top>
+						<left>5</left>
+						<control type="image">
+							<left>20</left>
+							<top>20</top>
+							<width>386</width>
+							<height>235</height>
+							<texture colordiffuse="button_focus">colors/white.png</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>406</width>
+							<height>255</height>
+							<texture fallback="DefaultPicture.png" background="true">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+					</control>
+				</focusedlayout>
+				<itemlayout height="225" width="225" condition="Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)">
+					<control type="group">
+						<top>88</top>
+						<left>45</left>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>255</width>
+							<height>255</height>
+							<texture fallback="DefaultAudio.png" background="true">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+							<aspectratio>scale</aspectratio>
+							<visible>!Container.Content(addons)</visible>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>255</width>
+							<height>255</height>
+							<texture fallback="DefaultAddon.png" background="true">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+							<aspectratio>scale</aspectratio>
+							<visible>Container.Content(addons)</visible>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>30</top>
+							<width>215</width>
+							<height>215</height>
+							<texture background="true" colordiffuse="BFFFFFFF">colors/black.png</texture>
+							<aspectratio>scale</aspectratio>
+							<visible>!Container.Content(addons)</visible>
+							<visible>Skin.HasSetting(greyedout_watched) + Integer.IsGreater(ListItem.Playcount,0) + Container.Content(musicvideos)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="225" width="225" condition="Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)">
+					<control type="group">
+						<top>88</top>
+						<left>45</left>
+						<control type="image">
+							<left>20</left>
+							<top>20</top>
+							<width>235</width>
+							<height>235</height>
+							<texture colordiffuse="button_focus">colors/white.png</texture>
+						</control>
+						<control type="group">
+							<control type="image">
+								<left>10</left>
+								<top>10</top>
+								<width>255</width>
+								<height>255</height>
+								<texture fallback="DefaultAudio.png" background="true">$VAR[ShiftThumbVar]</texture>
+								<bordertexture border="21">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+								<aspectratio>scale</aspectratio>
+								<visible>!Container.Content(addons)</visible>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<top>10</top>
+								<width>255</width>
+								<height>255</height>
+								<texture fallback="DefaultAddon.png" background="true">$VAR[ShiftThumbVar]</texture>
+								<bordertexture border="21">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+								<aspectratio>scale</aspectratio>
+								<visible>Container.Content(addons)</visible>
+							</control>
+							<control type="group">
+								<left>30</left>
+								<top>200</top>
+								<control type="image">
+									<width>215</width>
+									<height>45</height>
+									<texture>dialogs/back.png</texture>
+								</control>
+								<control type="label">
+									<left>10</left>
+									<width>195</width>
+									<height>45</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>font12</font>
+									<label>$INFO[ListItem.Label]</label>
+									<scroll>true</scroll>
+									<visible>!Container.Content(albums)</visible>
+								</control>
+								<control type="label">
+									<left>10</left>
+									<width>195</width>
+									<height>45</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>font12</font>
+									<label>$INFO[ListItem.Artist,, - ]$INFO[ListItem.Label]</label>
+									<scroll>true</scroll>
+									<visible>Container.Content(albums)</visible>
+								</control>
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+				<itemlayout height="300" width="210" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
+					<control type="group">
+						<top>88</top>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>240</width>
+							<height>330</height>
+							<texture fallback="DefaultVideo.png" background="true">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>250</top>
+							<width>70</width>
+							<height>70</height>
+							<texture>overlays/overlay-bg.png</texture>
+							<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>290</top>
+							<width>28</width>
+							<height>28</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>30</top>
+							<width>200</width>
+							<height>290</height>
+							<texture background="true" colordiffuse="BFFFFFFF">colors/black.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<visible>Skin.HasSetting(greyedout_watched) + Integer.IsGreater(ListItem.Playcount,0)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="300" width="210" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
+					<control type="group">
+						<top>88</top>
+						<control type="image">
+							<left>25</left>
+							<top>25</top>
+							<width>210</width>
+							<height>300</height>
+							<texture colordiffuse="button_focus">colors/white.png</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>240</width>
+							<height>330</height>
+							<texture fallback="DefaultVideo.png" background="true">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>250</top>
+							<width>70</width>
+							<height>70</height>
+							<texture>overlays/overlay-bg.png</texture>
+							<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>290</top>
+							<width>28</width>
+							<height>28</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<control type="scrollbar" id="60">
+			<right>0</right>
+			<width>12</width>
+			<height>100%</height>
+			<orientation>vertical</orientation>
+			<texturesliderbackground />
+			<onleft>509</onleft>
+			<onright>509</onright>
+			<visible>Control.IsVisible(509)</visible>
+		</control>
+	</include>
+</includes>

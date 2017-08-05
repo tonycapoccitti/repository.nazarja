@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_5011_Netflix_Episodes">	
+
+		<control type="group">	
+			<visible>Control.IsVisible(5011)</visible>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<aligny>top</aligny>
+				<right>0</right>
+				<height>50%</height>
+				<width>50%</width>
+				<depth>DepthBackground</depth>
+				<texture>$INFO[ListItem.Art(thumb)]</texture>
+			</control>
+			<control type="image">
+				<left>80</left>
+				<aspectratio>scale</aspectratio>
+				<include>FullScreenDimensions</include>
+				<depth>DepthBackground</depth>
+				<texture>overlays/NetFlixOverlay4.png</texture>
+				<colordiffuse>FF000000</colordiffuse>
+			</control>
+
+			<!-- <control type="textbox">
+				<left>980</left>
+                <right>0</right>
+				<top>20</top>
+				<height>60</height>
+				<width>50%</width>
+				<font>smallInfoFont</font>
+				<shadowcolor>text_shadow</shadowcolor>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control> -->
+			<control type="image">
+						<depth>DepthContentPopout</depth>
+						<left>810</left>
+						<top>20</top>
+						<width max="537">auto</width>
+						<height>99</height>
+						<aspectratio align="top" aligny="center">keep</aspectratio>
+						<texture background="true">$VAR[ClearLogoVar]</texture>
+						<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				</control>
+
+			<control type="image">
+				<left>50.1%</left>
+				<top>307</top>
+				<width>200</width>
+				<height>305</height>
+				<right>0</right>
+				<texture background="true">lists/panel.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<fadetime>300</fadetime>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder + !String.IsEmpty(Listitem.Art(poster))</visible>
+			</control>
+			<control type="image">
+				<left>49.6%</left>
+				<top>315</top>
+				<right>0</right>
+				<height>291</height>
+				<width>219</width>
+				<texture background="true">$VAR[IconWallPosterVar]</texture>
+				<fadetime>300</fadetime>
+				<aspectratio>keep</aspectratio>
+				<fadetime>300</fadetime>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder + !String.IsEmpty(Listitem.Art(poster))</visible>
+			</control>
+			<control type="textbox">
+				<left>50%</left>
+                <right>15</right>
+				<top>650</top>
+				<height>60</height>
+				<font>fontMainMenu</font>
+				<textcolor>button_focus</textcolor>
+				<label>$INFO[ListItem.Title]</label>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>50%</left>
+                <right>15</right>
+				<top>700</top>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>$INFO[ListItem.Genre] | $INFO[ListItem.Year] </label>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>50%</left>
+				<top>765</top>
+                <right>15</right>
+				<height>300</height>
+				<font>smallInfoFont</font>
+				<label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label> 
+				<autoscroll delay="6000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>89%</left>
+				<right>10</right>
+				<top>570</top>
+				<width>300</width>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>Ends at: $INFO[ListItem.EndTime]</label> 
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>83%</left>
+				<top>870</top>
+				<right>10</right>
+				<width>300</width>
+				<texture background="true">$INFO[ListItem.Art(banner)]</texture>
+				<aspectratio>keep</aspectratio>
+				<fadetime>300</fadetime>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder + !String.IsEmpty(Listitem.Art(poster))</visible>
+			</control>
+			
+			<control type="textbox">
+				<left>50%</left>
+				<top>1025</top>
+				<right>0</right>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>IMDB: $INFO[ListItem.RatingandVotes]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+			</control>
+			<control type="textbox">
+				<left>68%</left>
+				<top>1025</top>
+				<height>60</height>
+                <right>15</right>
+				<font>fontSubMenu</font>
+				<label>Studio: $INFO[ListItem.Studio]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<visible>!String.IsEmpty(ListItem.Studio)</visible>
+			</control>
+		</control>	 
+
+		<control type="group">
+			<visible>Control.IsVisible(5011)</visible>
+			<include>OpenClose_Right</include>
+			<include>Visible_Right</include>
+			<width>100%</width>
+			<height>100%</height>
+			<top>0</top>
+			<bottom>0</bottom>
+
+			<control type="fixedlist" id="5011">
+				<visible>Container.Content(episodes)</visible>
+				<viewtype label="Netflix (Episodes)">list</viewtype>
+				<orientation>vertical</orientation>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>5011</onup>
+				<ondown>5011</ondown>
+				<pagecontrol>60</pagecontrol>
+				<movement>5</movement>
+				<focusposition>6</focusposition>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+
+				<top>20</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>100</bottom>
+				<width>60%</width>
+
+				
+				<itemlayout  height="80" width="930" condition="Container.Content(episodes)">
+					<control type="label">
+						<width>100%</width>
+						<left>70</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
+					</control>
+				</itemlayout>
+
+				<focusedlayout  height="80" width="930"  condition="Container.Content(episodes)">
+					<control type="image">
+						<width>100%</width>
+						<height>80</height>
+						<left>0</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<visible>Control.HasFocus(5011)</visible>
+					</control>
+					<control type="label">
+						<width>100%</width>
+						<left>70</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<scroll>true</scroll>
+						<font>font27</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<bottom>0</bottom>
+						<left>100</left>
+						<right>20</right>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<label>$VAR[ListLabel2Var]</label>
+						<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+						<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
+						<animation effect="fade" time="150">VisibleChange</animation>
+						<visible>!Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+				</focusedlayout>
+
+			</control> <!-- End of List-->
+
+		</control><!-- End of Group-->
+		<control type="scrollbar" id="60">
+			<right>0</right>
+			<width>12</width>
+			<height>100%</height>
+			<orientation>vertical</orientation>
+			<texturesliderbackground />
+			<onleft>5011</onleft>
+			<onright>5011</onright>
+			<visible>Control.IsVisible(5011)</visible>
+		</control>
+	</include>
+</includes>

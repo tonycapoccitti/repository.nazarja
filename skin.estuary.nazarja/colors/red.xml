@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+	<color name="primary_background">BFFF0000</color>
+	<color name="secondary_background">26FF3333</color>
+	<color name="dialog_tint">80000000</color>
+	<color name="button_focus">CCFF0000</color>
+	<color name="selected">FFFF3333</color>
+</colors>
