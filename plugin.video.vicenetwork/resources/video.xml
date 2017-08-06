@@ -1,0 +1,62 @@
+<items>
+        <item>
+        <title>[COLOR=white]~~~~~~~~~~~~~~~~~~~~DJing~~~~~~~~~~~~~~~~~~~~[/COLOR]</title>
+        <link>none</link>
+        <thumbnail>https://www.djing.com/newimages/logo.png</thumbnail>
+        </item>
+
+        <item>
+        <title>[COLOR=blue]DJing Live[/COLOR]</title>
+        <link>https://www.djing.com/tv/05.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c01.jpg</thumbnail>
+        </item>
+
+        <item>
+        <title>[COLOR=blue]Ibiza Dance Floor[/COLOR]</title>
+        <link>https://www.djing.com/tv/d-05.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c02.jpg</thumbnail>
+        </item>
+
+        <item>
+        <title>[COLOR=blue]UnderGround[/COLOR]</title>
+        <link>https://www.djing.com/tv/u-05.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c04.jpg</thumbnail>
+        </item>
+
+        <item>
+        <title>[COLOR=blue]Hot Hot Hot[/COLOR]</title>
+        <link>https://www.djing.com/tv/h-01-fta.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c03.jpg</thumbnail>
+        </item>
+        
+        <item>
+        <title>[COLOR=blue]Classics[/COLOR]</title>
+        <link>https://www.djing.com/tv/i-05.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c06.jpg</thumbnail>
+        </item>
+        
+        <item>
+        <title>[COLOR=blue]Animation[/COLOR]</title>
+        <link>https://www.djing.com/tv/a-05.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c07.jpg</thumbnail>
+        </item>
+
+        <item>
+        <title>[COLOR=blue]Summer Vibes[/COLOR]</title>
+        <link>https://www.djing.com/tv/s-05-summer-vibes.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c05.jpg</thumbnail>
+        </item>
+
+        <item>
+        <title>[COLOR=blue]Electro Rock[/COLOR]</title>
+        <link>https://www.djing.com/tv/s-05-electro-rock.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c08.jpg</thumbnail>
+        </item>
+
+        <item>
+        <title>[COLOR=blue]Frech Touch[/COLOR]</title>
+        <link>https://www.djing.com/tv/s-05-french-touch.m3u8</link>
+        <thumbnail>https://www.djing.com/newimages/content/c09.jpg</thumbnail>
+        </item>
+        
+</items>
