@@ -242,7 +242,7 @@
 					<left>30</left>
 					<right>3</right>
 					<top>590</top>
-					<height>110</height>
+					<height>70</height>
 					<width>510</width>
 					<font>smallInfoFont</font>
 					<textcolor>button_focus</textcolor>
@@ -253,7 +253,7 @@
 				 <control type="textbox">
 					<left>30</left>
 					<right>10</right>
-					<top>620</top>
+					<top>610</top>
 					<height>90</height>
 					<width>500</width>
 					<font>smallInfoFont</font>
@@ -264,14 +264,12 @@
 				</control> 
 				<control type="textbox" id="15500">
 					<left>30</left>
-					<top>670</top>
+					<top>680</top>
 					<width>500</width>
-					<bottom>133</bottom>
+					<bottom>123</bottom>
 					<font>smallInfoFont</font>
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 					<label>$VAR[ListBoxInfoVar]</label>
-					<!-- <visible>!Container.Content(episodes)</visible>
-					<visible>!Container.Content(seasons)</visible> -->
 				</control>
 
 				<control type="textbox">
@@ -286,9 +284,6 @@
 					<visible>Comtainer.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(files)</visible>
 					<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
 				</control>
-
-
-
 
 				<control type="group">
 					<left>20</left>
@@ -318,7 +313,6 @@
 						<visible>!Integer.IsGreater(Container(42000).NumItems,0) + !Integer.IsGreater(Container(43000).NumItems,0)</visible>
 						<visible>!Container.Content() | !String.isempty(ListItem.Plot)</visible>
 					</control>
-
 
 					<control type="textbox">
 						<depth>bg_alpha</depth>

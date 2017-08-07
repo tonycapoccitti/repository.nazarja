@@ -22,8 +22,6 @@
 				<colordiffuse>FF000000</colordiffuse>
 			</control>
 
-
-
 			<control type="image">
 						<depth>DepthContentPopout</depth>
 						<top>20</top>
@@ -90,6 +88,7 @@
 				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 			</control>
+
 			<control type="textbox">
 				<left>390</left>
 				<top>420</top>
@@ -100,44 +99,55 @@
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
-				<visible>!String.IsEmpty(ListItem.Studio)</visible>
-				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<visible>!String.IsEmpty(ListItem.Studio) + !Container.Content(movies)</visible>
 			</control>
 			<control type="textbox">
-				<left>350</left>
+				<left>345</left>
 				<top>420</top>
-				<width>1200</width>
+				<width>300</width>
 				<height>60</height>
 				<font>fontSubMenu</font>
 				<label>DVD Release: $INFO[Window(Home).Property(SkinHelper.ListItem.DVDRelease)] </label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
-				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease)</visible> 
+				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease) + !Skin.HasSetting(ShowExtraRatings)</visible> 
 				 <visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="textbox">
-				<left>350</left>
+				<left>345</left>
 				<top>420</top>
-				<width>300</width>
+				<width>295</width>
 				<height>30</height>
 				<font>fontSubMenu</font>
 				<label>Director: $INFO[ListItem.Director]</label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
-				 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease) + Container.Content(movies)</visible> 
+				 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease) + Container.Content(movies) + !Skin.HasSetting(ShowExtraRatings)</visible> 
 				 <visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 			</control>
+			<control type="textbox">
+				<left>370</left>
+				<top>420</top>
+				<width>300</width>
+				<height>30</height>
+				<font>fontSubMenu</font>
+				<label>Rotten Tomatoes: $INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Rating)]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				 <visible>Skin.HasSetting(ShowExtraRatings) + Container.Content(movies) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Rating)</visible>
+			</control>
+
 			<control type="textbox">
 				<left>650</left>
 				<top>420</top>
 				<width>1200</width>
 				<height>60</height>
 				<font>fontSubMenu</font>
-				<label>Status: $INFO[Window(Home).Property(SkinHelper.ListItem.Status)] </label>
+				<label>Status: $INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
-				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status) + Container.Content(tvshows)</visible> 
 				 <visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
@@ -152,9 +162,20 @@
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
-				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Budget.formatted) + Container.Content(movies)</visible> 
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Budget.formatted) + Container.Content(movies) + !Skin.HasSetting(ShowExtraRatings)</visible> 
 			</control>
-
+			<control type="textbox">
+				<left>670</left>
+				<top>420</top>
+				<width>1200</width>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>MetaCritic: $INFO[Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				<visible>Skin.HasSetting(ShowExtraRatings) + Container.Content(movies) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)</visible>
+			</control>
 
 			<control type="textbox">
 				<right>20</right>
@@ -168,8 +189,6 @@
 				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 			</control>
 		</control>
-
-
 
 	<control type="group">
 			<include>OpenClose_Right</include>

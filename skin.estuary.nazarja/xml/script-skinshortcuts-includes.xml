@@ -9,18 +9,13 @@
 			<thumb />
 			<property name="labelID">favourites</property>
 			<property name="defaultID" />
-			<property name="widget">Addon</property>
-			<property name="widgetName">Covenant - People Watching</property>
-			<property name="widgetType">videos</property>
-			<property name="widgetTarget">videos</property>
-			<property name="widgetPath">plugin://plugin.video.covenant/?action=tvshows&amp;url=trending&amp;reload=$INFO[Window(Home).Property(widgetreload)]</property>
 			<onclick>ActivateWindow(Favourites)</onclick>
 			<property name="path">ActivateWindow(Favourites)</property>
 			<property name="list">Favourites</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">favourites</property>
 			<property name="group">mainmenu</property>
-			<property name="hasSubmenu">False</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
@@ -171,6 +166,38 @@
 	</include>
 	<include />
 	<include name="skinshortcuts-submenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[1036]</label>
+			<label2>Common menu item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">1036</property>
+			<property name="defaultID">1036</property>
+			<onclick>ActivateWindow(Favourites)</onclick>
+			<property name="path">ActivateWindow(Favourites)</property>
+			<property name="list">Favourites</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),favourites)</visible>
+			<property name="group">favourites</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">1</property>
+			<label>Super Favourites</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">plugin.program.super.favourites</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.super.favourites",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.super.favourites",return)</property>
+			<property name="list">plugin://plugin.program.super.favourites</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),favourites)</visible>
+			<property name="group">favourites</property>
+			<property name="isSubmenu">True</property>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">2</property>
@@ -620,10 +647,72 @@
 		</item>
 	</include>
 	<include name="skinshortcuts-group-favourites">
-		<description>No items</description>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[1036]</label>
+			<label2>Common menu item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">1036</property>
+			<property name="defaultID">1036</property>
+			<onclick>ActivateWindow(Favourites)</onclick>
+			<property name="path">ActivateWindow(Favourites)</property>
+			<property name="list">Favourites</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">favourites</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">1</property>
+			<label>Super Favourites</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">plugin.program.super.favourites</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.super.favourites",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.super.favourites",return)</property>
+			<property name="list">plugin://plugin.program.super.favourites</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">favourites</property>
+			<property name="isSubmenu">True</property>
+		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-favourites">
-		<description>No items</description>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">1</property>
+			<label>$LOCALIZE[1036]</label>
+			<label2>Common menu item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">1036</property>
+			<property name="defaultID">1036</property>
+			<onclick>ActivateWindow(Favourites)</onclick>
+			<property name="path">ActivateWindow(Favourites)</property>
+			<property name="list">Favourites</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),favourites)</visible>
+			<property name="group">favourites</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">1</property>
+			<label>Super Favourites</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">plugin.program.super.favourites</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.super.favourites",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.super.favourites",return)</property>
+			<property name="list">plugin://plugin.program.super.favourites</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),favourites)</visible>
+			<property name="group">favourites</property>
+			<property name="isSubmenu">True</property>
+		</item>
 	</include>
 	<include name="skinshortcuts-group-movies">
 		<item id="1">

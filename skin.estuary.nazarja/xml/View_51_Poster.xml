@@ -101,7 +101,8 @@
 						<right>50</right>
 						<height>40</height>
 						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
-						<font>font45_title</font>
+						<textcolor>button_focus</textcolor>
+						<font>infoInterstate</font>
 						<shadowcolor>text_shadow</shadowcolor>
 					</control>
 					<control type="textbox">
@@ -111,8 +112,20 @@
 						<right>115</right>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 						<label>$INFO[ListItem.Plot]</label>
+						<font>smallInfoFont</font>
 						<shadowcolor>text_shadow</shadowcolor>
 						<visible>!ListItem.IsCollection</visible>
+					</control>
+					<control type="textbox">
+						<left>695</left>
+						<top>450</top>
+						<height>50</height>
+						<right>115</right>
+						<font>fontSubMenu</font>
+						<label>IMDB: $INFO[ListItem.RatingandVotes]   -   Ends at: $INFO[ListItem.EndTime] ($INFO[Window(Home).Property(SkinHelper.ListItem.Duration)] mins)</label> 
+						<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+						<textcolor>$VAR[secondHighlightColor]</textcolor>
+						<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
 					</control>
 				</control>
 			</control>

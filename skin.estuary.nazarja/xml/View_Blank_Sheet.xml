@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="View_5011_Netflix_Episodes">	
+	<include name=" ">	
 		<control type="group">
 			<visible>Control.IsVisible(5011)</visible>
 			<include>OpenClose_Right</include>
@@ -9,7 +9,7 @@
 
 			<control type="fixedlist" id="5011">
 				<visible>Container.Content(episodes)</visible>
-				<viewtype label="Netflix (Episodes)">list</viewtype>
+				<viewtype label=" ">list</viewtype>
 				<orientation>vertical</orientation>
 				<onleft>9000</onleft>
 				<onright>531</onright>

@@ -53,9 +53,7 @@
                             <width>440</width>
                             <height>90</height>
                             <texture colordiffuse="button_focus">lists/focus.png</texture>
-                            <animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">
-                                Conditional
-                            </animation>
+                            <animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(211)">Conditional</animation>
                         </control>
                         <control type="label">
                             <textoffsetx>40</textoffsetx>
@@ -112,45 +110,58 @@
 
                     <control type="button" id="401">
                         <description>Choose shortcut</description>
-                        <width>1256</width>
+                        <width>1380</width>
                         <include>DefaultSettingButton</include>
                         <label>$ADDON[script.skinshortcuts 32048]</label>
                         <label2>$INFO[Container(211).ListItem.Label]</label2>
                     </control>
                     <control type="button" id="307">
                         <description>Change action</description>
-                        <width>1256</width>
+                        <width>1380</width>
                         <include>DefaultSettingButton</include>
                         <label>$ADDON[script.skinshortcuts 32027]</label>
                         <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
                     </control>
                     <control type="button" id="305">
                         <description>Change label</description>
-                        <width>1256</width>
+                        <width>1380</width>
                         <include>DefaultSettingButton</include>
                         <label>$ADDON[script.skinshortcuts 32025]</label>
                         <label2>$INFO[Container(211).ListItem.Label]</label2>
                     </control>
                     <control type="button" id="405">
                         <description>Edit submenu</description>
-                        <width>1256</width>
+                        <width>1380</width>
                         <include>DefaultSettingButton</include>
                         <label>$ADDON[script.skinshortcuts 32072]</label>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     </control>
-
-                    <!-- ////////////////////////////////////////////////////////////////////////////////////  -->
-
+                    <control type="radiobutton" id="313">
+                        <description>Disable this Menu Entry</description>
+                        <width>1380</width>
+                        <include>DefaultSettingButton</include>
+                        <!-- <label>$ADDON[script.skinshortcuts 32117]</label> -->
+                        <label>Disable this Menu Entry</label>
+                        <selected>String.Contains(Container(211).ListItem.Property(skinshortcuts-disabled),true)</selected>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    </control>
+                    <control type="button" id="310">
+                        <description>Browse for background</description>
+                        <include>DefaultSettingButton</include>
+                        <width>1380</width>
+                        <label>$ADDON[script.skinshortcuts 32045]</label>
+                        <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible> 
+                    </control>
                     <control type="button" id="312">
                         <description>Select widget</description>
-                        <width>1256</width>
+                        <width>1380</width>
                         <include>DefaultSettingButton</include>
                         <label>$ADDON[script.skinshortcuts 32044]</label>
                         <label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
                         <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=[True/False]&amp;grouping=[grouping]&amp;skinWidget=[skinWidget]&amp;skinWidgetType=[skinWidgetType]&amp;skinWidgetName=[skinWidgetName]&amp;skinWidgetTarget=[skinWidgetTarget]&amp;skinWidgetPath=[skinWidgetPath])</onclick>  
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     </control> 
- 
                 </control>
                 <control type="image">
                     <description>Dialog Header image</description>

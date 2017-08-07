@@ -11,7 +11,6 @@
 				<height>55%</height>
 				<width>55%</width>
 				<depth>DepthBackground</depth>
-				<!-- <texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Fanart)]</texture> -->
 				<texture>$INFO[ListItem.Art(fanart)]</texture>
 			</control>
 			<control type="image">
@@ -55,7 +54,7 @@
 				<font>fontMainMenu</font>
 				<textcolor>button_focus</textcolor>
 				<label>$INFO[ListItem.Label]</label>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 			</control>
 			<control type="textbox">
 				<left>50%</left>
@@ -64,7 +63,7 @@
 				<height>60</height>
 				<font>fontSubMenu</font>
 				<label>$INFO[ListItem.Genre] | $INFO[ListItem.Year] </label>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 			</control>
 			<control type="textbox">
 				<left>50%</left>
@@ -74,7 +73,7 @@
 				<font>smallInfoFont</font>
 				<label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label> 
 				<autoscroll delay="6000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 			</control>
 			<control type="textbox">
 				<left>50%</left>
@@ -85,7 +84,7 @@
 				<label>IMDB: $INFO[ListItem.RatingandVotes]</label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 			</control>
 			<control type="textbox">
 				<left>68%</left>
@@ -96,7 +95,7 @@
 				<label>Studio: $INFO[ListItem.Studio]</label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 				<visible>!String.IsEmpty(ListItem.Studio)</visible>
 			</control>
 			<control type="textbox">
@@ -108,8 +107,8 @@
 				<label>DVD Release: $INFO[Window(Home).Property(SkinHelper.ListItem.DVDRelease)] </label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
-				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease)</visible> 
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease) + !Skin.HasSetting(ShowExtraRatings)</visible> 
 			</control>
 			 <control type="textbox">
 				<left>68%</left>
@@ -121,9 +120,22 @@
 				<label>Director: $INFO[ListItem.Director]</label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
-				 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease) + Container.Content(movies)</visible> 
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				 <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.DVDRelease) + Container.Content(movies) + !Skin.HasSetting(ShowExtraRatings)</visible> 
 			</control> 
+			<control type="textbox">
+				<left>68%</left>
+				<top>975</top>
+                <right>0</right>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>Rotten Tomatoes: $INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Rating)]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				 <visible>Skin.HasSetting(ShowExtraRatings) + Container.Content(movies) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Rating)</visible> 
+			</control>
+
 			<control type="textbox">
 				<left>85%</left>
 				<top>975</top>
@@ -132,8 +144,8 @@
 				<label>Status: $INFO[Window(Home).Property(SkinHelper.ListItem.Status)] </label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
-				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status) + Container.Content(tvshows)</visible> 
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				<visible>!Skin.HasSetting(ShowExtraRatings) + Container.Content(tvshows)</visible>
 			</control>
 			<control type="textbox">
 				<left>85%</left>
@@ -143,8 +155,19 @@
 				<label>Budget: $INFO[Window(Home).Property(SkinHelper.ListItem.Budget.formatted)] </label>
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
-				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Budget.formatted) + Container.Content(movies)</visible> 
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Budget.formatted) + Container.Content(movies) + !Skin.HasSetting(ShowExtraRatings)</visible> 
+			</control>
+			<control type="textbox">
+				<left>85%</left>
+				<top>975</top>
+				<height>60</height>
+				<font>fontSubMenu</font>
+				<label>MetaCritic: $INFO[Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)]</label>
+				<textcolor>$VAR[secondHighlightColor]</textcolor>
+				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
+				<visible>Skin.HasSetting(ShowExtraRatings) + Container.Content(movies) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)</visible>
 			</control>
 
 			<control type="textbox">
@@ -156,7 +179,7 @@
 				<label>Ends at: $INFO[ListItem.EndTime] ($INFO[Window(Home).Property(SkinHelper.ListItem.Duration)] mins)</label> 
 				<textcolor>$VAR[secondHighlightColor]</textcolor>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
+				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(508) ">Conditional</animation>
 			</control>
 		</control>
 
@@ -378,6 +401,7 @@
 							<width>210</width>
 							<height>300</height>
 							<texture colordiffuse="button_focus">colors/white.png</texture>
+							<animation effect="zoom" start="100" end="110" time="110" tween="sine" easing="inout" center="50,100">Focus</animation>
 						</control>
 						<control type="image">
 							<left>10</left>
@@ -388,6 +412,7 @@
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 							<aspectratio>scale</aspectratio>
+							<animation effect="zoom" start="100" end="110" time="110" tween="sine" easing="inout" center="50,100">Focus</animation>
 						</control>
 						<control type="image">
 							<left>30</left>
@@ -396,6 +421,7 @@
 							<height>70</height>
 							<texture>overlays/overlay-bg.png</texture>
 							<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+							<animation effect="zoom" start="100" end="110" time="110" tween="sine" easing="inout" center="50,100">Focus</animation>
 						</control>
 						<control type="image">
 							<left>30</left>

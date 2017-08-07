@@ -208,12 +208,6 @@
 					<onclick>Skin.ToggleSetting(ToggleSubMenuBackground)</onclick>
 					<selected>Skin.HasSetting(ToggleSubMenuBackground)</selected>
 				</control>
-				<control type="button" id="801223">
-					<include>DefaultSettingButton</include>
-					<label>Change Secondary Color on Views</label>
-					<label2>$VAR[secondHighlightColor]</label2>
-					<onclick>RunScript(script.skin.helper.colorpicker,skinstring=secondHighlightColor)</onclick>
-				</control>
 				<control type="button" id="801226">
 					<include>DefaultSettingButton</include>
 					<label>Change System Info Color</label>
@@ -231,7 +225,6 @@
 					<onclick>Skin.Reset(MainMenuGradientColor)</onclick>
 					<onclick>Skin.Reset(SubMenuColor)</onclick>
 					<onclick>Skin.Reset(MenuOverlay)</onclick>
-					<onclick>Skin.Reset(secondHighlightColor)</onclick>
 					<onclick>Skin.Reset(SystemInfoColor)</onclick>
 				</control>
 				<control type="radiobutton" id="811224">
@@ -298,7 +291,7 @@
 				</control>
 			</control>
 
-			<!-- Overlays-->
+			<!-- Overlays / Backgrounds-->
 			<control type="grouplist" id="400321">
 				<top>168</top>
 				<left>0</left>
@@ -312,9 +305,14 @@
 				<visible>Container(9000).HasFocus(4)</visible>
 				<control type="button" id="6001">
 					<include>DefaultSettingButton</include>
-					<label>Choose Background Images Folder</label>
+					<label>Choose Global Home Background Images Folder</label>
 					<label2>$VAR[Label_SkinSetting_Backgrounds]</label2>
 					<onclick>Skin.SetPath(Backgrounds)</onclick>
+                </control>
+				<control type="button" id="60010">
+					<include>DefaultSettingButton</include>
+					<label>∟Reset Global Home Background</label>
+					<onclick>Skin.Reset(Backgrounds)</onclick>
                 </control>
 				<control type="button" id="6003">
 					<include>DefaultSettingButton</include>
@@ -357,7 +355,7 @@
 				</control>
 			</control>
 
-			<!-- Artwork  -->
+			<!-- Artwork / Views -->
 			<control type="grouplist" id="600">
 				<top>160</top>
 				<left>0</left>
@@ -368,6 +366,18 @@
 				<onup>600</onup>
 				<ondown>600</ondown>
 				<visible>Container(9000).HasFocus(5)</visible>
+				<control type="button" id="801223">
+					<include>DefaultSettingButton</include>
+					<label>Change Secondary Color on Views</label>
+					<label2>$VAR[secondHighlightColor]</label2>
+					<onclick>RunScript(script.skin.helper.colorpicker,skinstring=secondHighlightColor)</onclick>
+				</control>
+				<control type="radiobutton" id="7123432">
+					<include>DefaultSettingButton</include>
+					<label>Show Extras Ratings for Movies (Instead of Extra Info on Netflix Views)</label>
+					<selected>Skin.HasSetting(ShowExtraRatings)</selected>	
+					<onclick>Skin.ToggleSetting(ShowExtraRatings)</onclick>
+				</control> 
 				 <control type="radiobutton" id="7123433">
 					<include>DefaultSettingButton</include>
 					<label>Show Clear Art on Views</label>
@@ -488,11 +498,6 @@
 					<onclick>Skin.ToggleDebug</onclick>
 				</control>
 			</control>
-
-			
-
-
-			
 
 			<!-- Required addons  -->
 			<control type="grouplist" id="300">
@@ -631,17 +636,6 @@
 					<selected>System.HasAddon(plugin.program.autocompletion)</selected>
 					<include>DefaultSettingButton</include>
 				</control>
-				<control type="radiobutton" id="311">
-					<label>Global Search $INFO[System.AddonVersion(script.globalsearch),(,)]</label>
-					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
-					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
-					<onclick condition="System.HasAddon(script.globalsearch)">Addon.OpenSettings(script.globalsearch)</onclick>
-					<selected>System.HasAddon(script.globalsearch)</selected>
-					<include>DefaultSettingButton</include>
-				</control>
 				<control type="radiobutton" id="313">
 					<label>Artwork Downloader $INFO[System.AddonVersion(script.artwork.downloader),(,)]</label>
 					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
@@ -673,17 +667,6 @@
 					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">Addon.OpenSettings(script.image.resource.select)</onclick>
 					<selected>System.HasAddon(script.image.resource.select)</selected>
-					<include>DefaultSettingButton</include>
-				</control>
-				<control type="radiobutton" id="310">
-					<label>Play Album Script $INFO[System.AddonVersion(script.playalbum),(,)]</label>
-					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
-					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(script.playalbum)">InstallAddon(script.playalbum)</onclick>
-					<onclick condition="System.HasAddon(script.playalbum)">Addon.OpenSettings(script.playalbum)</onclick>
-					<selected>System.HasAddon(script.playalbum)</selected>
 					<include>DefaultSettingButton</include>
 				</control>
 				<control type="radiobutton" id="317">
@@ -803,11 +786,11 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="4">
-						<label>Overlays</label>
+						<label>Overlays / Background</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="5">
-						<label>Artwork</label>
+						<label>Artwork / Views</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="6">

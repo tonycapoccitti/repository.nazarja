@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<!-- Skin Shortcuts Backgrounds  -->
+	<variable name="SkinShortcutsBackgroundsVar">
+		<value condition="!String.IsEmpty(Container(9000).ListItem.Property(background))">$INFO[Container(9000).ListItem.Property(background)]</value>
+	</variable>
 	<variable name="SystemInfoColor">
 		<value condition="!String.IsEmpty(Skin.String(SystemInfoColor))">$INFO[Skin.String(SystemInfoColor)]</value>
 		<value>FF575757</value>
@@ -159,9 +163,8 @@
 	</variable>
 	
 	<variable name="Label_SkinSetting_Backgrounds">
-		<value condition="!String.IsEmpty(Skin.String(Backgrounds))">$INFO[Skin.String(Backgrounds)]</value>
-		 <value>defaulthome.jpg</value> 
-		 <!-- <value>colors/defaultBackground.jpg</value>  -->
+		<value condition="!String.IsEmpty(Skin.String(Backgrounds)) + String.IsEmpty(Container(9000).ListItem.Property(background))">$INFO[Skin.String(Backgrounds)]</value>
+		 <value  condition="String.IsEmpty(Container(9000).ListItem.Property(background))">defaulthome.jpg</value> 
 	</variable>
 	<variable name="Label_SkinSetting_BackgroundOverlay">
 		<value condition="!String.IsEmpty(Skin.String(BackgroundOverlay))">$INFO[Skin.String(BackgroundOverlay)]</value>

@@ -24,9 +24,7 @@
 			<include>View_507_Mosaic_Vertical</include>
 			<include>View_506_Mosaic</include>
 			<include>View_52_IconWall</include>
-			<!-- <include>View_501_Banner</include> -->
 			
-
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
@@ -70,7 +68,6 @@
 				</control> 	
 
 				<control type="textbox">
-					<visible>!Skin.HasSetting(ClearArtOnViews)</visible>
 					<left>40</left>
 					<right>10</right>
 					<top>150</top>
@@ -78,18 +75,9 @@
 					<font>infoInterstate</font>
 					<textcolor>button_focus</textcolor>
 					<label>$INFO[ListItem.Title]</label>
+					<visible>!Skin.HasSetting(ClearArtOnViews)</visible>
 					<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
 				</control>
-				<!-- <control type="image">
-						<depth>DepthContentPopout</depth>
-						<top>260</top>
-						<left>30</left>
-						<width max="537">auto</width>
-						<height>300</height>
-						<aspectratio align="top" aligny="center">keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(poster)]</texture>
-						<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-				</control> -->
 				<control type="image">
 						<depth>DepthContentPopout</depth>
 						<top>260</top>
@@ -126,8 +114,8 @@
 					<left>30</left>
 					<top>620</top>
 					<right>0</right>
-					<bottom>115</bottom>
-					<label>$INFO[ListItem.Plot]</label> 
+					<bottom>110</bottom>
+				 	<label>$INFO[ListItem.Plot]</label>  
 					<font>smallInfoFont</font>
 					<autoscroll delay="6000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 					<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>

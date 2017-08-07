@@ -24,6 +24,7 @@
 			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
 		</control>
 		 <include>DefaultBackground</include>
+		 <!-- Set Global MultiImage Background  -->
 		<control type="multiimage">
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
@@ -34,6 +35,21 @@
 			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<imagepath background="true">$VAR[Label_SkinSetting_Backgrounds]</imagepath>
+			<timeperimage>20000</timeperimage>
+			<randomize>true</randomize>
+			<visible>!Player.HasMedia</visible>
+		</control>
+		<!-- Skin Shortcuts Background  -->
+		<control type="multiimage">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>600</fadetime>
+			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			 <imagepath background="true">$VAR[SkinShortcutsBackgroundsVar]</imagepath> 
 			<timeperimage>20000</timeperimage>
 			<randomize>true</randomize>
 			<visible>!Player.HasMedia</visible>
@@ -67,7 +83,7 @@
 			<visible>!Skin.HasSetting(HideWidgets)</visible> 
 		</control>
 		<control type="image">
-			<left>-120</left>
+			<left>-80</left>
 			<top>140</top>
 			<width>95%</width>
 			<height>400</height>
@@ -1020,7 +1036,7 @@
 					</itemlayout>  
 				   <focusedlayout height="290" width="200">
 				   		<control type="textbox">
-							<left>-575</left>
+							<left>-535</left>
 							<top>235</top>
 							<width>1200</width>
 							<height>60</height>
@@ -1031,7 +1047,7 @@
 						    <animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(208) ">Conditional</animation>
 						</control>
 				   		<control type="textbox">
-							<left>-575</left>
+							<left>-535</left>
 							<top>305</top>
 							<width>1450</width>
 							<height>170</height>
