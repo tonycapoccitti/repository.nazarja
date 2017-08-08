@@ -372,12 +372,12 @@
 					<label2>$VAR[secondHighlightColor]</label2>
 					<onclick>RunScript(script.skin.helper.colorpicker,skinstring=secondHighlightColor)</onclick>
 				</control>
-				<control type="radiobutton" id="7123432">
+				<!-- <control type="radiobutton" id="7123432">
 					<include>DefaultSettingButton</include>
 					<label>Show Extras Ratings for Movies (Instead of Extra Info on Netflix Views)</label>
 					<selected>Skin.HasSetting(ShowExtraRatings)</selected>	
 					<onclick>Skin.ToggleSetting(ShowExtraRatings)</onclick>
-				</control> 
+				</control>  -->
 				 <control type="radiobutton" id="7123433">
 					<include>DefaultSettingButton</include>
 					<label>Show Clear Art on Views</label>

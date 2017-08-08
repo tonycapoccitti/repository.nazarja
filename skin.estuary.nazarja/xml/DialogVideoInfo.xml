@@ -14,7 +14,7 @@
 				<top>150</top>
 				<left>66</left>
 				<include>OpenClose_Left</include>
-				<!-- <control type="image">
+				<control type="image">
 					<top>-16</top>
 					<left>-16</left>
 					<width>566</width>
@@ -22,134 +22,16 @@
 					<texture>colors/black.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-				</control> -->
-				<control type="image">
-					<left>4</left>
-					<top>-120</top>
-					<width max="526">auto</width>
-					<height>100</height>
-					<aspectratio align="top" aligny="center">keep</aspectratio>
-					<texture>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo)]</texture>
 				</control>
 				<control type="image">
-					<left>4</left>
-					<top>-5</top>
-					<width>526</width>
-					<height>410</height>
-					<aspectratio>scale</aspectratio>
-					<texture fallback="defaultnopreview.png">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Fanart)]</texture>
-				</control>
-
-				<!-- <control type="image">
 					<depth>DepthContentPopout</depth>
 					<left>4</left>
-					<top>410</top>
+					<top>4</top>
 					<width>526</width>
-					<height>410</height>
+					<height>801</height>
 					<aspectratio>scale</aspectratio>
-					<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
-				</control> -->
-				<control type="button" id="195138">
-						<width>565</width>
-						<height>445</height>
-						<left>-16</left>
-						<top>390</top>
-						<label></label>
-						<onclick>SetProperty(TextViewer_Header,Next Episode Plot,home)</onclick> 
-						<onclick>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</onclick>
-						<onclick>SetProperty(TextViewer_Text,$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Plot)],home)</onclick>
-						<onclick>ActivateWindow(1102)</onclick>
-						<onup>138</onup>
-						<onright>5000</onright>
-						<ondown>5000</ondown>
-						<texturenofocus border="21">dialogs/dialog-bg.png</texturenofocus>
-				</control>	
-				
-				<control type="grouplist" id="40011">
-					<orientation>vertical</orientation>
-					<left>4</left>
-					<top>420</top>
-					<height>410</height>
-					<width>526</width>
-					<itemgap>-8</itemgap>
-					<ondown>5000</ondown>
-					<onup>50</onup>
-					<onright>140</onright>
-					<onleft>140</onleft>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10050" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Duration,[COLOR button_focus]Video Duration: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Duration)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Status,[COLOR button_focus]Production Status: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10048" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Budget.formatted,[COLOR button_focus]Budget: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Budget.formatted)" />	
-					</include> 
-					 <include content="InfoDialogMetadata">
-						<param name="control_id" value="10047" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Revenue.formatted,[COLOR button_focus]Revenue: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Revenue.formatted)" />						
-					</include> 
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.BoxOffice,[COLOR button_focus]BoxOffice: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.BoxOffice)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Awards,[COLOR button_focus]Awards: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Awards)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Popularity,[COLOR button_focus]Popularity: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Popularity)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating,[COLOR button_focus]MetaCritic Rating: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MetaCritic.Rating)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Network,[COLOR button_focus]Network: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Network)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.AirDayTime,[COLOR button_focus]Air-Day-Time: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.AirDayTime)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label,[COLOR button_focus]Next Episode: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Rating.TVDB,[COLOR button_focus]Rating on TVDB: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.TVDB)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.Votes.TVDB,[COLOR button_focus]Votes on TVDB: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Votes.TVDB)" />							
-					</include>
-					<include content="InfoDialogMetadata">
-						<param name="control_id" value="10049" />
-						<param name="label" value="$INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Plot,[COLOR button_focus]Next Episode Plot: [/COLOR]]" />
-						<param name="visible" value="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Plot)" />
-					</include>
+					<texture fallback="DefaultVideo.png">$VAR[InfoDialogPosterVar]</texture>
 				</control>
-					
-
-
 				<control type="group">
 					<visible>String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
 					<visible>!String.IsEmpty(ListItem.Thumb) + !String.IsEqual(ListItem.Thumb,ListItem.Art(poster))</visible>
@@ -159,7 +41,7 @@
 						<width>526</width>
 						<height>801</height>
 						<aspectratio>stretch</aspectratio>
-						<!-- <texture colordiffuse="AAFFFFFF" fallback="DefaultVideo.png">colors/black.png</texture> -->
+						<texture colordiffuse="AAFFFFFF" fallback="DefaultVideo.png">colors/black.png</texture>
 					</control>
 					<control type="image">
 						<left>14</left>
@@ -211,7 +93,7 @@
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Text,$ESCINFO[ListItem.Plot],home)</onclick>
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">ActivateWindow(1102)</onclick>
 						<onup>50</onup>
-						<onleft>195138</onleft>
+						<onleft>138</onleft>
 						<onright>138</onright>
 						<ondown>5000</ondown>
 						<texturenofocus border="21">dialogs/dialog-bg.png</texturenofocus>
@@ -364,152 +246,135 @@
 				</control>
 				<control type="panel" id="50">
 					<top>158</top>
-					<width>980</width>
+					<width>1235</width>
 					<height>370</height>
 					<onleft>50</onleft>
 					<onright>50</onright>
-					<left>245</left>
 					<onup condition="System.hasAddon(script.extendedinfo) + Control.HasFocus(50)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onup>
 					<onup condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onup>
 					<ondown>140</ondown>
 					<scrolltime>200</scrolltime>
 					<orientation>horizontal</orientation>
-
-					    <itemlayout height="317" width="245">
-                            <control type="group">
-                                <width>233</width>
-                                <height>342</height>
-                                <control type="image">
-									<top>20</top>
-									<left>20</left>
-									<width>224</width>
-									<height>277</height>
-									<width>233</width>
-									<height>342</height>
-									<texture>DefaultActorSolid.png</texture>
-									<aspectratio aligny="center">scale</aspectratio>
-									<bordertexture border="21">overlays/shadow.png</bordertexture>
-									<bordersize>20</bordersize>
-								</control>
-                                  <control type="image">
-									<top>20</top>
-									<left>20</left>
-									<width>224</width>
-									<height>277</height>
-                                    <texture border="1" diffuse="diffuse/poster.png" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-                                    <aspectratio aligny="center">scale</aspectratio>
-                                  </control>
-								  <control type="image">
-									<left>20</left>
-									<width>224</width>
-									<height>100</height>
-									<bottom>45</bottom>
-									<texture>overlays/overlayfade.png</texture>
-									<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
-								</control>
-								<control type="label">
-									<left>25</left>
-									<width>214</width>
-									<height>67</height>
-									<top>218</top>
-									<align>center</align>
-									<aligny>center</aligny>
-									<font>font12</font>
-									<label>$INFO[ListItem.Label]</label>
-								</control>
-								<control type="label">
-									<left>25</left>
-									<width>214</width>
-									<height>67</height>
-									<top>245</top>
-									<align>center</align>
-									<aligny>center</aligny>
-									<font>font12</font>
-									<textcolor>grey</textcolor>
-									<label>$INFO[ListItem.Label2]</label>
-								</control>
-                              </control>
-                        </itemlayout>
-
-                        <focusedlayout height="317" width="245">
-                            <control type="group">
-                                <width>233</width>
-                                <height>342</height>
-                                <control type="image">
-                                    <include>PosterThumbFO</include>
-                                  </control>
-                                  <control type="image">
-								  	<top>20</top>
-									<left>20</left>
-									<width>224</width>
-									<height>277</height>
-                                    <texture border="1" diffuse="diffuse/poster.png" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-                                    <aspectratio aligny="center">scale</aspectratio>
-                                  </control>
-								  <control type="image">
-									<left>20</left>
-									<width>224</width>
-									<height>100</height>
-									<bottom>45</bottom>
-									<texture>overlays/overlayfade.png</texture>
-									<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
-								</control>
-								<control type="label">
-									<left>25</left>
-									<width>214</width>
-									<height>67</height>
-									<top>218</top>
-									<align>center</align>
-									<aligny>center</aligny>
-									<font>font12</font>
-									<label>$INFO[ListItem.Label]</label>
-								</control>
-								<control type="label">
-									<left>25</left>
-									<width>214</width>
-									<height>67</height>
-									<top>245</top>
-									<align>center</align>
-									<aligny>center</aligny>
-									<font>font12</font>
-									<textcolor>grey</textcolor>
-									<label>$INFO[ListItem.Label2]</label>
-								</control>
-								<control type="image">
-									<left>16</left>
-									<top>16</top>
-									<width>232</width>
-									<height>285</height>
-									<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
-									<visible>Control.HasFocus(50)</visible>
-								</control>
-                              </control>
-
-                              <control type="button">
-                                <label>-</label>
-                                <visible>false</visible>
-                                <onfocus>SetProperty(actordbid,$INFO[ListItem.Property(DBID)],home)</onfocus>
-                            </control>
-                        </focusedlayout>
-                        <content>$VAR[castInfo]</content>
-					</control>	
-					
-				
-					<control type="image">
-						<left>-155</left>
-						<top>175</top>
-						<width max="526">auto</width>
-						<height>292</height>
-						<aspectratio align="top" aligny="center">keep</aspectratio>
-						<texture >$INFO[Window(Home).Property(SkinHelper.ListItem.Art.thumb)]</texture>
-					</control>
-
+					<itemlayout height="317" width="245">
+						<control type="group">
+							<top>10</top>
+							<control type="image">
+								<top>0</top>
+								<width>264</width>
+								<height>317</height>
+								<texture>DefaultActorSolid.png</texture>
+								<aspectratio aligny="center">scale</aspectratio>
+								<bordertexture border="21">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+							</control>
+							<control type="image">
+								<top>20</top>
+								<left>20</left>
+								<width>224</width>
+								<height>277</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio aligny="center">scale</aspectratio>
+							</control>
+							<control type="image">
+								<left>20</left>
+								<width>224</width>
+								<height>80</height>
+								<bottom>10</bottom>
+								<texture>overlays/overlayfade.png</texture>
+								<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+							</control>
+							<control type="label">
+								<left>25</left>
+								<width>214</width>
+								<height>67</height>
+								<top>218</top>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font12</font>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<left>25</left>
+								<width>214</width>
+								<height>67</height>
+								<top>245</top>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font12</font>
+								<textcolor>grey</textcolor>
+								<label>$INFO[ListItem.Label2]</label>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="317" width="245">
+						<control type="group">
+							<left>0</left>
+							<top>10</top>
+							<control type="image">
+								<top>0</top>
+								<width>264</width>
+								<height>317</height>
+								<texture>DefaultActorSolid.png</texture>
+								<aspectratio aligny="center">scale</aspectratio>
+								<bordertexture border="21">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+							</control>
+							<control type="image">
+								<top>20</top>
+								<left>20</left>
+								<width>224</width>
+								<height>277</height>
+								<texture background="true">$INFO[ListItem.Thumb]</texture>
+								<aspectratio aligny="center">scale</aspectratio>
+							</control>
+							<control type="image">
+								<left>20</left>
+								<width>224</width>
+								<height>80</height>
+								<bottom>10</bottom>
+								<texture>overlays/overlayfade.png</texture>
+								<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+							</control>
+							<control type="label">
+								<left>25</left>
+								<width>214</width>
+								<height>67</height>
+								<top>218</top>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font12</font>
+								<scroll>true</scroll>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<left>25</left>
+								<width>214</width>
+								<height>67</height>
+								<top>245</top>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font12</font>
+								<textcolor>grey</textcolor>
+								<scroll>true</scroll>
+								<label>$INFO[ListItem.Label2]</label>
+							</control>
+							<control type="image">
+								<left>16</left>
+								<top>16</top>
+								<width>232</width>
+								<height>285</height>
+								<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+								<visible>Control.HasFocus(50)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
 				<control type="grouplist" id="5000">
 					<left>0</left>
 					<top>864</top>
 					<width>1246</width>
 					<height>400</height>
-					<onleft>195138</onleft>
+					<onleft>5000</onleft>
 					<onright>5000</onright>
 					<onup>140</onup>
 					<ondown condition="!Integer.IsGreater(Container(5000).Position,4)">SetFocus(50,$INFO[Container(5000).Position])</ondown>
@@ -519,15 +384,15 @@
 					<orientation>horizontal</orientation>
 					<scrolltime tween="quadratic">200</scrolltime>
 					<include content="InfoDialogButton">
+						<param name="id" value="8" />
+						<param name="icon" value="icons/infodialogs/play.png" />
+						<param name="label" value="$LOCALIZE[208]" />
+					</include>
+					<include content="InfoDialogButton">
 						<param name="id" value="11" />
 						<param name="icon" value="icons/infodialogs/trailer.png" />
 						<param name="label" value="$LOCALIZE[20410]" />
 						<param name="visible" value="!String.IsEmpty(ListItem.Trailer) + ![String.StartsWith(Container.FolderPath,plugin://) + String.Contains(Container.FolderPath,trailer)]" />
-					</include>
-					<include content="InfoDialogButton">
-						<param name="id" value="8" />
-						<param name="icon" value="icons/infodialogs/play.png" />
-						<param name="label" value="$LOCALIZE[208]" />
 					</include>
 					<include content="InfoDialogButton">
 						<param name="id" value="440" />
@@ -580,6 +445,13 @@
 							<visible>String.IsEmpty(ListItem.UserRating)</visible>
 						</control>
 					</control>
+					<!-- <include content="InfoDialogButton">
+						<param name="id" value="101" />
+						<param name="icon" value="icons/infodialogs/info.png" />
+						<param name="label" value="$LOCALIZE[31034]" />
+						<param name="onclick_1" value="RunScript(script.extendedinfo,info=openinfodialog)" />
+						<param name="visible" value="System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode)]" />
+					</include> -->
 					<include content="InfoDialogButton">
 						<!-- <onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[VideoPlayer.TvShowTitle])</onclick> -->
 						<param name="id" value="101" />
@@ -616,7 +488,7 @@
 				</control>
 				<include content="LeftRightArrows">
 					<param name="list_id" value="5000" />
-					<param name="left_posx" value="-235" />
+					<param name="left_posx" value="-15" />
 					<param name="right_posx" value="1240" />
 					<param name="posy" value="924" />
 					<param name="visible" value="true" />
